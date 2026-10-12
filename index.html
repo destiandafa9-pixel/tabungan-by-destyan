@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#123b2b" />
+<meta name="description" content="Tabungan by Destyan untuk Pendaki: catat tabungan, atur target, dan pantau progres pendakian." />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icons/icon-192.png" type="image/png" />
+<title>Tabungan by Destyan untuk Pendaki</title>
+<style>
+:root{--bg:#f4f7f2;--card:#fff;--ink:#17251d;--muted:#68766d;--green:#1e6948;--green2:#2c8b5b;--line:#e1e9e1;--gold:#f2c66d;--red:#b64a43;--shadow:0 14px 35px rgba(24,60,39,.08)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top right,#dceee0 0,transparent 33%),var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink)}.wrap{max-width:980px;margin:auto;padding:24px 16px 48px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.3px}.logo{width:42px;height:42px;border-radius:14px;background:var(--green);display:grid;place-items:center;color:white;font-size:22px}.pill{background:#e4f2e7;color:var(--green);padding:8px 12px;border-radius:99px;font-size:12px;font-weight:800}.hero{position:relative;overflow:hidden;border-radius:28px;padding:28px;color:#fff;background:linear-gradient(125deg,#123b2b,#1d6948 65%,#2b8255);box-shadow:var(--shadow)}.hero:after{content:'⛰';position:absolute;right:20px;bottom:-44px;font-size:180px;opacity:.11;line-height:1}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:1.5px;opacity:.8;font-weight:800}.hero h1{font-size:clamp(28px,5vw,43px);line-height:1.08;letter-spacing:-1.5px;margin:10px 0}.hero p{max-width:530px;line-height:1.6;color:#d7e9dc;margin:0 0 22px}.big-number{font-size:clamp(36px,7vw,58px);font-weight:850;letter-spacing:-2px;margin:8px 0}.progress-info{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:#e0f0e3;margin-bottom:9px}.track{height:11px;border-radius:99px;background:#ffffff35;overflow:hidden;max-width:620px}.fill{height:100%;width:0;background:var(--gold);border-radius:99px;transition:width .3s}.hero-foot{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.hero-stat{background:#ffffff12;border:1px solid #ffffff22;border-radius:14px;padding:12px 15px;min-width:130px}.hero-stat small{display:block;color:#cce3d2;font-size:11px;margin-bottom:4px}.hero-stat strong{font-size:17px}.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-top:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow)}.card h2{font-size:18px;margin:0 0 5px;letter-spacing:-.4px}.sub{color:var(--muted);font-size:13px;line-height:1.5;margin:0 0 18px}.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:16px}.quick button{border:1px solid #cfe1d2;background:#f4faf5;color:var(--green);font-weight:800;padding:13px 5px;border-radius:13px;cursor:pointer}.quick button:hover{background:#e4f2e7}.field{display:block;font-size:12px;font-weight:750;color:#526157;margin:13px 0 7px}.inputrow{display:flex;gap:9px}.inputrow input,.settings input{width:100%;min-width:0;padding:13px 12px;border:1px solid #d9e3da;border-radius:12px;background:#fbfdfb;font:inherit;color:var(--ink);outline:none}.inputrow input:focus,.settings input:focus{border-color:var(--green2);box-shadow:0 0 0 3px #2c8b5b18}.primary{border:0;background:var(--green);color:#fff;font-weight:800;padding:13px 17px;border-radius:12px;cursor:pointer;white-space:nowrap}.primary:hover{background:#155438}.secondary{border:1px solid var(--line);background:#fff;color:var(--ink);font-weight:750;padding:10px 12px;border-radius:11px;cursor:pointer}.note{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.5}.settings{display:grid;grid-template-columns:1fr 1fr;gap:10px}.settings .full{grid-column:1/-1}.settings button{width:100%}.history-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:13px}.history{display:flex;flex-direction:column;gap:9px}.entry{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 13px;border:1px solid #edf1ed;border-radius:13px}.entry-left{min-width:0}.entry-title{font-size:13px;font-weight:800}.entry-date{font-size:11px;color:var(--muted);margin-top:3px}.amount{font-weight:850;font-size:14px;white-space:nowrap}.amount.plus{color:var(--green)}.amount.minus{color:var(--red)}.empty{border:1px dashed #d7e2d8;border-radius:14px;padding:22px;text-align:center;color:var(--muted);font-size:13px}.footer{text-align:center;font-size:11px;color:#829087;margin-top:20px;line-height:1.6}.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);background:#17251d;color:#fff;padding:12px 17px;border-radius:13px;font-size:13px;opacity:0;pointer-events:none;transition:.25s;box-shadow:var(--shadow);z-index:5}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:700px){.wrap{padding:15px 12px 32px}.hero{padding:23px 19px;border-radius:23px}.hero:after{font-size:130px;right:5px}.grid{grid-template-columns:1fr}.card{padding:18px}.top{margin-bottom:15px}.pill{font-size:10px}.hero-stat{flex:1}.inputrow{flex-wrap:wrap}.inputrow .primary{width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><div class="brand"><div class="logo">↗</div><span>Tabungan by Destyan</span></div><div class="pill">🎯 Misi: Gunung Slamet</div></header>
+  <section class="hero">
+    <div class="eyebrow">Sedikit demi sedikit, jadi pendaki</div>
+    <h1>Tabungan by Destyan ⛰️</h1>
+    <p>Catat tabunganmu, jaga konsistensi, dan dekatkan diri ke target pendakian. Setiap rupiah bikin kamu selangkah lebih dekat.</p>
+    <div class="eyebrow">Total tabungan saat ini</div>
+    <div class="big-number" id="balance">Rp0</div>
+    <div class="progress-info"><span id="percentText">0% dari target</span><span id="targetText">Target Rp810.000</span></div>
+    <div class="track"><div class="fill" id="progressFill"></div></div>
+    <div class="hero-foot"><div class="hero-stat"><small>Masih kurang</small><strong id="remaining">Rp810.000</strong></div><div class="hero-stat"><small>Target nabung harian</small><strong id="dailyHero">Rp10.000</strong></div><div class="hero-stat"><small>Hari tercatat</small><strong id="daysSaved">0 hari</strong></div></div>
+  </section>
+  <div class="grid">
+    <section class="card">
+      <h2>Tambah tabungan 💸</h2><p class="sub">Pilih nominal cepat atau masukkan jumlah sendiri.</p>
+      <div class="quick"><button data-amount="5000">+ Rp5.000</button><button data-amount="10000">+ Rp10.000</button><button data-amount="20000">+ Rp20.000</button></div>
+      <label class="field" for="amount">Nominal tabungan (Rp)</label>
+      <div class="inputrow"><input id="amount" type="number" min="1" step="1000" placeholder="Contoh: 10000" inputmode="numeric"><button class="primary" id="addBtn">Simpan tabungan</button></div>
+      <div class="note">Data tersimpan di browser perangkat ini. Kalau hapus data browser atau ganti perangkat, catatan bisa hilang.</div>
+    </section>
+    <section class="card">
+      <h2>Atur target 🎯</h2><p class="sub">Sesuaikan dengan biaya pendakian dan kemampuan menabungmu.</p>
+      <div class="settings"><div><label class="field" for="targetInput">Target (Rp)</label><input id="targetInput" type="number" min="1" step="10000" value="810000" inputmode="numeric"></div><div><label class="field" for="dailyInput">Target harian (Rp)</label><input id="dailyInput" type="number" min="1" step="1000" value="10000" inputmode="numeric"></div><div class="full"><button class="primary" id="saveSettings">Simpan target</button></div></div>
+      <p class="note" id="forecast">Dengan target harianmu, kamu bisa mencapai target secara bertahap.</p>
+    </section>
+  </div>
+  <section class="card" style="margin-top:18px">
+    <h2>Kurangi atau reset uang 🔧</h2>
+    <p class="sub">Catat uang yang terpakai supaya saldo tetap sesuai. Reset akan menghapus seluruh riwayat setoran dan pengeluaran.</p>
+    <label class="field" for="subtractAmount">Nominal yang dipakai (Rp)</label>
+    <div class="inputrow"><input id="subtractAmount" type="number" min="1" step="1000" placeholder="Contoh: 15000" inputmode="numeric"><button class="primary" id="subtractBtn" style="background:#a63f38">Kurangi uang</button></div>
+    <div class="settings" style="margin-top:14px"><div class="full"><button class="secondary" id="resetBtn" style="border-color:#e8c4c1;color:#a63f38">Reset semua uang & riwayat</button></div></div>
+    <p class="note">Saldo tidak bisa dikurangi melebihi jumlah tabungan yang tersedia. Reset tidak mengubah target tabunganmu.</p>
+  </section>
+  <section class="card" style="margin-top:18px">
+    <div class="history-head"><div><h2>Riwayat tabungan 📒</h2><p class="sub" style="margin:5px 0 0">Semua setoran yang kamu catat.</p></div><button class="secondary" id="exportBtn">Unduh CSV</button></div>
+    <div class="history" id="history"><div class="empty">Belum ada tabungan. Yuk, mulai dari Rp5.000!</div></div>
+  </section>
+  <div class="footer">Dibuat buat nemenin misi pendakianmu. Tetap utamakan keselamatan, cek status jalur resmi, dan siapkan perlengkapan yang layak. 💚</div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+(()=>{
+ const KEY='tabunganku_slamet_v1';
+ const fmt=n=>new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(n||0);
+ const dateFmt=d=>new Intl.DateTimeFormat('id-ID',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(d));
+ const defaults={target:810000,daily:10000,entries:[]};
+ let state; try{state={...defaults,...JSON.parse(localStorage.getItem(KEY)||'{}')};if(!Array.isArray(state.entries))state.entries=[];}catch(e){state={...defaults};}
+ const $=id=>document.getElementById(id);
+ function save(){localStorage.setItem(KEY,JSON.stringify(state));render();}
+ function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+ function total(){return state.entries.reduce((s,e)=>s+e.amount,0)}
+ function render(){
+   const sum=total(),target=Math.max(1,Number(state.target)||810000),daily=Math.max(1,Number(state.daily)||10000),pct=Math.min(100,sum/target*100);
+   $('balance').textContent=fmt(sum);$('targetText').textContent='Target '+fmt(target);$('percentText').textContent=(sum/target*100).toLocaleString('id-ID',{maximumFractionDigits:1})+'% dari target';$('progressFill').style.width=pct+'%';$('remaining').textContent=fmt(Math.max(0,target-sum));$('dailyHero').textContent=fmt(daily);
+   $('daysSaved').textContent=new Set(state.entries.filter(e=>e.amount>0).map(e=>new Date(e.date).toDateString())).size+' hari';
+   $('targetInput').value=state.target;$('dailyInput').value=state.daily;
+   const left=Math.max(0,target-sum),days=Math.ceil(left/daily);$('forecast').textContent=left===0?'Target tercapai! Keren, tetap siapkan dana cadangan.':`Kalau konsisten ${fmt(daily)} per hari, target tercapai sekitar ${days} hari lagi.`;
+   const hist=$('history');hist.innerHTML='';
+   if(!state.entries.length){hist.innerHTML='<div class="empty">Belum ada tabungan. Yuk, mulai dari Rp5.000!</div>';return;}
+   [...state.entries].reverse().forEach(e=>{const row=document.createElement('div');row.className='entry';const left=document.createElement('div');left.className='entry-left';const title=document.createElement('div');title.className='entry-title';title.textContent=e.label||'Setoran tabungan';const date=document.createElement('div');date.className='entry-date';date.textContent=dateFmt(e.date);left.append(title,date);const amt=document.createElement('div');amt.className='amount '+(e.amount>=0?'plus':'minus');amt.textContent=(e.amount>=0?'+ ':'− ')+fmt(Math.abs(e.amount));row.append(left,amt);hist.append(row);});
+ }
+ function add(amount){if(!Number.isFinite(amount)||amount<=0){toast('Masukkan nominal yang benar dulu.');return;}state.entries.push({amount:Math.round(amount),date:new Date().toISOString(),label:'Setoran tabungan'});save();$('amount').value='';toast('Mantap! '+fmt(amount)+' berhasil dicatat.');}
+ function subtract(amount){
+   amount=Math.round(amount);
+   if(!Number.isFinite(amount)||amount<=0){toast('Masukkan nominal pengeluaran yang benar.');return;}
+   if(amount>total()){toast('Saldo tidak cukup untuk dikurangi sebesar itu.');return;}
+   state.entries.push({amount:-amount,date:new Date().toISOString(),label:'Pengeluaran / uang diambil'});
+   save();$('subtractAmount').value='';toast(fmt(amount)+' berhasil dikurangi dari tabungan.');
+ }
+ document.querySelectorAll('[data-amount]').forEach(b=>b.addEventListener('click',()=>add(Number(b.dataset.amount))));
+ $('addBtn').addEventListener('click',()=>add(Number($('amount').value)));
+ $('amount').addEventListener('keydown',e=>{if(e.key==='Enter')add(Number($('amount').value));});
+ $('subtractBtn').addEventListener('click',()=>subtract(Number($('subtractAmount').value)));
+ $('subtractAmount').addEventListener('keydown',e=>{if(e.key==='Enter')subtract(Number($('subtractAmount').value));});
+ $('resetBtn').addEventListener('click',()=>{
+   if(!state.entries.length){toast('Tabungan dan riwayat sudah kosong.');return;}
+   if(confirm('Yakin ingin mereset semua uang dan menghapus seluruh riwayat? Tindakan ini tidak bisa dibatalkan.')){
+     state.entries=[];save();toast('Tabungan dan riwayat berhasil direset.');
+   }
+ });
+ $('saveSettings').addEventListener('click',()=>{const t=Number($('targetInput').value),d=Number($('dailyInput').value);if(t<=0||d<=0){toast('Target harus lebih dari nol.');return;}state.target=Math.round(t);state.daily=Math.round(d);save();toast('Target berhasil diperbarui!');});
+ $('exportBtn').addEventListener('click',()=>{if(!state.entries.length){toast('Belum ada riwayat untuk diunduh.');return;}const rows=[['Tanggal','Keterangan','Nominal (Rp)'],...state.entries.map(e=>[dateFmt(e.date),e.label,e.amount])];const csv=rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\r\n');const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='riwayat-tabungan-by-destyan.csv';a.click();URL.revokeObjectURL(url);});
+ render();
+})();
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => { navigator.serviceWorker.register('./sw.js').catch(() => {}); });
+}
+</script>
+</body>
+</html>
